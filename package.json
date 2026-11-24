@@ -1,0 +1,40 @@
+{
+  "name": "flowstate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "eslint -c eslint.config.mjs . --max-warnings=0",
+    "test:estimation": "node --experimental-strip-types --test tests/task-estimation.test.mjs",
+    "test:workload": "tsc --module commonjs --target ES2017 --skipLibCheck --outDir .next/workload-tests lib/workload.ts && node --test tests/workload.test.mjs",
+    "start": "next start",
+    "test:planner": "tsc --module commonjs --target ES2017 --skipLibCheck --outDir .next/workload-tests lib/planner.ts lib/workload.ts lib/study-preferences-store.ts && node --test tests/planner.test.mjs",
+    "test:preferences": "tsc --module commonjs --target ES2017 --skipLibCheck --outDir .next/workload-tests lib/study-preferences-store.ts && node --test tests/study-preferences-store.test.mjs",
+    "test:calendar-plan": "tsc --module commonjs --target ES2017 --skipLibCheck --outDir .next/workload-tests lib/calendar-plan.ts && node --test tests/calendar-plan.test.mjs",
+    "test:local-tasks": "tsc --module commonjs --target ES2017 --skipLibCheck --outDir .next/local-task-tests lib/local/tasks-store.ts lib/local/tasks-read.ts lib/local/task-mutations.ts lib/tasks-page-load.ts && node --test tests/local-tasks-store.test.mjs tests/local-outbox.test.mjs tests/tasks-read.test.mjs tests/tasks-page-load.test.mjs tests/task-mutations.test.mjs",
+    "test:hydration": "tsc --module commonjs --jsx react-jsx --target ES2017 --skipLibCheck --esModuleInterop --outDir .next/hydration-tests app/tasks/tasks-content.tsx && node --test tests/tasks-hydration.test.mjs",
+    "test:sync-model": "node --test tests/sync-protocol-model.test.mjs",
+    "test:sync-postgres": "node --test tests/task-sync-postgres.test.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
+    "next": "^16.3.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "fake-indexeddb": "^6.2.8",
+    "jsdom": "^26.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5.9.3"
+  }
+}

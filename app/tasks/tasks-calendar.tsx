@@ -47,7 +47,7 @@ function CalendarTask({ task, onEdit, isBusy }: Pick<TasksCalendarProps, 'onEdit
           : 'border-[#e9ecef] bg-white hover:bg-sky-50'
       }`}
     >
-      <span className={`block truncate text-sm font-medium ${task.status === 'completed' ? 'text-[#6c757d] line-through' : 'text-[#2963af]'}`}>
+      <span className={`block truncate text-sm font-medium ${task.status === 'completed' ? 'text-[#6c757d] line-through' : 'text-[#256569]'}`}>
         {task.title || 'Без названия'}
       </span>
       <span className="mt-1 flex flex-wrap gap-1">
@@ -109,7 +109,7 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
     <section aria-label="Календарь задач" className="space-y-5">
       <div className="rounded-xl border border-[#e9ecef] bg-white p-4 shadow-sm sm:p-5">
         <header className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <h3 aria-live="polite" className="text-xl font-semibold capitalize text-[#2963af]">
+          <h3 aria-live="polite" className="text-xl font-semibold capitalize text-[#256569]">
             {monthLabel}
           </h3>
           <div className="flex gap-2">
@@ -140,9 +140,9 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
                       aria-label={`${formatCalendarDate(day.key, { day: 'numeric', month: 'long', year: 'numeric' })}, дедлайнов: ${dayTasks.length}${dayPlan ? `, занятия: ${dayPlan.totalMinutes} минут` : ''}`}
                       className={`mb-2 w-full rounded-md px-2 py-1 text-left text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] ${
                         selectedDate === day.key
-                          ? 'bg-[#039be5] text-white'
+                          ? 'bg-[#469092] text-white'
                           : today === day.key
-                            ? 'bg-sky-50 text-[#039be5] ring-1 ring-inset ring-sky-200'
+                            ? 'bg-sky-50 text-[#469092] ring-1 ring-inset ring-sky-200'
                             : day.isCurrentMonth
                               ? 'text-[#495057] hover:bg-sky-50'
                               : 'text-[#adb5bd] hover:bg-sky-50'
@@ -155,7 +155,7 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
                       {dayTasks.length > 0 && <p className="px-1 text-[10px] font-semibold uppercase text-[#6c757d]">Дедлайны</p>}
                       {dayTasks.slice(0, 3).map((task) => <CalendarTask key={task.id} task={task} {...taskProps} />)}
                       {dayTasks.length > 3 && (
-                        <button type="button" onClick={() => selectDate(day.key)} className="w-full rounded px-2 py-1 text-left text-xs font-semibold text-[#039be5] hover:bg-sky-50 focus-visible:outline-2 focus-visible:outline-[#4fc3f7]">
+                        <button type="button" onClick={() => selectDate(day.key)} className="w-full rounded px-2 py-1 text-left text-xs font-semibold text-[#469092] hover:bg-sky-50 focus-visible:outline-2 focus-visible:outline-[#4fc3f7]">
                           Ещё {dayTasks.length - 3}
                         </button>
                       )}
@@ -169,7 +169,7 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
       </div>
 
       <section aria-labelledby="selected-day-heading" className="rounded-xl border border-[#e9ecef] bg-white p-5">
-        <h3 id="selected-day-heading" aria-live="polite" className="mb-3 text-lg font-semibold text-[#2963af]">
+        <h3 id="selected-day-heading" aria-live="polite" className="mb-3 text-lg font-semibold text-[#256569]">
           {formatCalendarDate(selectedDate, { day: 'numeric', month: 'long', year: 'numeric' })} · Дедлайны ({selectedTasks.length})
         </h3>
         {!availability ? <p role="alert" className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">Не удалось загрузить настройки доступности. Учебный план недоступен; обновите страницу.</p> : !selectedPlan ? <p className="mb-4 text-sm text-[#6c757d]">Учебный план на эту дату не рассчитан.</p> : <div className="mb-5 rounded-lg bg-sky-50 p-4">
@@ -177,7 +177,7 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
           <p className="mt-1 text-sm text-sky-800">Запланировано: {selectedPlan.totalMinutes} мин · Доступно: {selectedPlan.availableMinutes} мин · Свободно: {selectedPlan.freeMinutes} мин</p>
           {selectedPlan.tasks.length === 0 ? <p className="mt-2 text-sm text-[#6c757d]">Занятий нет.</p> : <ul className="mt-2 space-y-2">{selectedPlan.tasks.map(item => <li key={item.taskId}><button type="button" {...{ autoComplete: 'off' }} disabled={isBusy} onClick={() => onOpenTask(item.taskId)} className="text-left text-sm font-medium text-[#0277bd] underline disabled:opacity-60">{item.title} — {item.minutes} мин</button></li>)}</ul>}
         </div>}
-        <h4 className="mb-2 font-semibold text-[#2963af]">Задачи с дедлайном в этот день</h4>
+        <h4 className="mb-2 font-semibold text-[#256569]">Задачи с дедлайном в этот день</h4>
         {selectedTasks.length === 0 ? (
           <p className="text-sm text-[#6c757d]">На выбранную дату нет задач с текущими фильтрами.</p>
         ) : (
@@ -189,7 +189,7 @@ export default function TasksCalendar({ tasks, allTasks, availability, onEdit, o
 
       {undatedTasks.length > 0 && (
         <section aria-labelledby="undated-tasks-heading" className="rounded-xl border border-[#e9ecef] bg-white p-5">
-          <h3 id="undated-tasks-heading" className="text-lg font-semibold text-[#2963af]">Без даты ({undatedTasks.length})</h3>
+          <h3 id="undated-tasks-heading" className="text-lg font-semibold text-[#256569]">Без даты ({undatedTasks.length})</h3>
           <p className="mb-3 mt-1 text-sm text-[#6c757d]">Дедлайн отсутствует или некорректен. Откройте задачу, чтобы указать дату.</p>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {undatedTasks.map((task) => <CalendarTask key={task.id} task={task} {...taskProps} />)}

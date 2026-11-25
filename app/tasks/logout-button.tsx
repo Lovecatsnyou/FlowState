@@ -40,7 +40,7 @@ export default function LogoutButton() {
         type="button"
         onClick={handleLogout}
         disabled={isSigningOut}
-        className="w-full rounded-md border border-[#649bc4] px-4 py-2.5 text-sm font-medium text-[#173f70] transition-colors hover:bg-[#2963af] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-md border border-[#184649] px-4 py-2.5 text-sm font-medium text-[#184649] transition-colors hover:bg-[#256569] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSigningOut ? 'Выход...' : 'Выйти'}
       </button>

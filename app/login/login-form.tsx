@@ -48,7 +48,7 @@ export default function LoginForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           required
-          className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+          className="w-full rounded-lg border border-[#e0eeed] px-3 py-2 text-[#212529] focus:border-[#256569] focus:outline-none"
         />
       </div>
 
@@ -59,7 +59,7 @@ export default function LoginForm() {
           </label>
           <Link
             href="/forgot-password"
-            className="text-sm font-medium text-[#2963af] hover:text-[#173f70] hover:underline"
+            className="text-sm font-medium text-[#2963af] hover:text-[#256569] hover:underline"
           >
             Забыли пароль?
           </Link>
@@ -70,14 +70,14 @@ export default function LoginForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           required
-          className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+          className="w-full rounded-lg border border-[#e0eeed] px-3 py-2 text-[#212529] focus:border-[#256569] focus:outline-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full rounded-lg bg-[#2963af] px-4 py-2 font-medium text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+        className="w-full rounded-lg bg-[#256569] px-4 py-2 font-medium text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
       >
         {isLoading ? "Вход..." : "Войти"}
       </button>
@@ -86,7 +86,7 @@ export default function LoginForm() {
         Нет аккаунта?{" "}
         <Link
           href="/register"
-          className="font-medium text-[#2963af] underline hover:text-[#173f70]"
+          className="font-medium text-[#2963af] underline hover:text-[#256569]"
         >
           Зарегистрироваться
         </Link>

@@ -45,7 +45,7 @@ export default async function TasksPage({
   const dateFilter = typeof params.date === 'string' && parseDeadline(params.date) ? params.date : '';
 
   return (
-    <div className="min-h-screen bg-[#E3F1FB] text-[#212529] lg:flex">
+    <div className="min-h-screen bg-[#C0D6D8] text-[#212529] lg:flex">
       <Sidebar activePath="/tasks" email={user.email} />
 
       <TasksContent

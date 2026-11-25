@@ -141,14 +141,14 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
     <div className="space-y-6">
       {/* Карточка 1: Имя пользователя */}
       <section className={cardStyles}>
-        <h2 className="text-xl font-semibold text-[#2963af]">Имя пользователя</h2>
+        <h2 className="text-xl font-semibold text-[#256569]">Имя пользователя</h2>
         <p className="mt-1 text-sm text-[#6c757d]">
           Отображается в приветствии на странице Dashboard.
         </p>
 
         <form onSubmit={handleUpdateName} className="mt-5 space-y-4">
           <div>
-            <label htmlFor="account-name" className="block text-sm font-medium text-[#2963af]">
+            <label htmlFor="account-name" className="block text-sm font-medium text-[#256569]">
               Имя
             </label>
             <input
@@ -157,14 +157,14 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
               value={fullName}
               onChange={(event) => setFullName(event.target.value)}
               required
-              className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#2963af] focus:outline-none"
+              className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#256569] focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={nameLoading}
-            className="rounded-lg bg-[#2963af] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+            className="rounded-lg bg-[#256569] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
           >
             {nameLoading ? "Сохранение..." : "Сохранить имя"}
           </button>
@@ -184,14 +184,14 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
 
       {/* Карточка 2: Электронная почта */}
       <section className={cardStyles}>
-        <h2 className="text-xl font-semibold text-[#2963af]">Электронная почта</h2>
+        <h2 className="text-xl font-semibold text-[#256569]">Электронная почта</h2>
         <p className="mt-1 text-sm text-[#6c757d]">
           После изменения почты потребуется подтвердить новый адрес по ссылке из письма.
         </p>
 
         <form onSubmit={handleUpdateEmail} className="mt-5 space-y-4">
           <div>
-            <label htmlFor="account-email" className="block text-sm font-medium text-[#2963af]">
+            <label htmlFor="account-email" className="block text-sm font-medium text-[#256569]">
               Email
             </label>
             <input
@@ -200,14 +200,14 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               required
-              className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#2963af] focus:outline-none"
+              className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#256569] focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={emailLoading}
-            className="rounded-lg bg-[#2963af] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+            className="rounded-lg bg-[#256569] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
           >
             {emailLoading ? "Отправка..." : "Изменить email"}
           </button>
@@ -227,7 +227,7 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
 
       {/* Карточка 3: Смена пароля */}
       <section className={cardStyles}>
-        <h2 className="text-xl font-semibold text-[#2963af]">Смена пароля</h2>
+        <h2 className="text-xl font-semibold text-[#256569]">Смена пароля</h2>
         <p className="mt-1 text-sm text-[#6c757d]">
           Задайте новый пароль длиной не менее 6 символов.
         </p>
@@ -235,7 +235,7 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
         <form onSubmit={handleUpdatePassword} className="mt-5 space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="account-new-password" className="block text-sm font-medium text-[#2963af]">
+              <label htmlFor="account-new-password" className="block text-sm font-medium text-[#256569]">
                 Новый пароль
               </label>
               <input
@@ -245,12 +245,12 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
                 onChange={(event) => setNewPassword(event.target.value)}
                 required
                 minLength={6}
-                className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#2963af] focus:outline-none"
+                className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#256569] focus:outline-none"
               />
             </div>
 
             <div>
-              <label htmlFor="account-confirm-password" className="block text-sm font-medium text-[#2963af]">
+              <label htmlFor="account-confirm-password" className="block text-sm font-medium text-[#256569]">
                 Подтвердите новый пароль
               </label>
               <input
@@ -260,7 +260,7 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
                 onChange={(event) => setConfirmPassword(event.target.value)}
                 required
                 minLength={6}
-                className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#2963af] focus:outline-none"
+                className="mt-2 block w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#495057] focus:border-[#256569] focus:outline-none"
               />
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function AccountForms({ initialName, initialEmail }: AccountForms
           <button
             type="submit"
             disabled={passwordLoading}
-            className="rounded-lg bg-[#2963af] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+            className="rounded-lg bg-[#256569] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
           >
             {passwordLoading ? "Обновление..." : "Изменить пароль"}
           </button>

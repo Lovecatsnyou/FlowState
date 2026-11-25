@@ -114,7 +114,7 @@ export default function RegisterForm() {
           Уже подтвердили почту?{" "}
           <Link
             href="/login"
-            className="font-medium text-[#2963af] underline hover:text-[#173f70]"
+            className="font-medium text-[#469092] underline hover:text-[#173f70]"
           >
             Войти
           </Link>
@@ -136,7 +136,7 @@ export default function RegisterForm() {
           onChange={(event) => setFullName(event.target.value)}
           placeholder="Как к вам обращаться"
           required
-          className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+          className="w-full rounded-lg border border-[#e0eeed] px-3 py-2 text-[#212529] focus:border-[#469092] focus:outline-none"
         />
       </div>
 
@@ -150,7 +150,7 @@ export default function RegisterForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           required
-          className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+          className="w-full rounded-lg border border-[#e0eeed] px-3 py-2 text-[#212529] focus:border-[#469092] focus:outline-none"
         />
       </div>
 
@@ -165,14 +165,14 @@ export default function RegisterForm() {
           onChange={(event) => setPassword(event.target.value)}
           required
           minLength={6}
-          className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+          className="w-full rounded-lg border border-[#e0eeed] px-3 py-2 text-[#212529] focus:border-[#469092] focus:outline-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full rounded-lg bg-[#2963af] px-4 py-2 font-medium text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+        className="w-full rounded-lg bg-[#256569] px-4 py-2 font-medium text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
       >
         {isLoading ? "Регистрация..." : "Зарегистрироваться"}
       </button>

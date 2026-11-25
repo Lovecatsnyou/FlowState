@@ -19,14 +19,14 @@ export default async function AccountPage() {
   const initialName = typeof profileName === "string" ? profileName.trim() : "";
 
   return (
-    <div className="min-h-screen bg-[#E3F1FB] text-[#212529] lg:flex">
+    <div className="min-h-screen bg-[#C0D6D8] text-[#212529] lg:flex">
       <Sidebar activePath="/account" email={user.email} />
 
       <main className="min-w-0 flex-1 px-5 py-8 sm:px-8 lg:p-10">
         <div className="mx-auto max-w-2xl">
           <header className="mb-8">
-            <p className="mb-2 text-sm font-medium text-[#039be5]">Профиль</p>
-            <h1 className="text-3xl font-bold tracking-tight text-[#2963af]">
+            <p className="mb-2 text-sm font-medium text-[#256569]">Профиль</p>
+            <h1 className="text-3xl font-bold tracking-tight text-[#256569]">
               Аккаунт
             </h1>
             <p className="mt-3 text-sm text-[#6c757d] sm:text-base">

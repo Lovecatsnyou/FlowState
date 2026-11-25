@@ -32,7 +32,7 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#E3F1FB] p-6 text-[#173f70]">
+    <main className="min-h-screen flex items-center justify-center bg-[#C0D6D8] p-6 text-[#173f70]">
       <div className="w-full max-w-md rounded-xl border border-[#c4def1] bg-white p-6 shadow-sm sm:p-8">
         <h1 className="text-3xl font-bold mb-2">Восстановление пароля</h1>
         <p className="text-gray-600 mb-6">
@@ -51,7 +51,7 @@ export default function ForgotPasswordPage() {
             <div className="text-center text-sm text-[#495057]">
               <Link
                 href="/login"
-                className="font-medium text-[#2963af] underline hover:text-[#173f70]"
+                className="font-medium text-[#173f70] underline hover:text-[#2936af]"
               >
                 Вернуться ко входу
               </Link>
@@ -69,14 +69,14 @@ export default function ForgotPasswordPage() {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
-                className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#2963af] focus:outline-none"
+                className="w-full rounded-lg border border-[#ced4da] px-3 py-2 text-[#212529] focus:border-[#256569] focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full rounded-lg bg-[#2963af] px-4 py-2 font-medium text-white transition-colors hover:bg-[#204f8a] disabled:opacity-50"
+              className="w-full rounded-lg bg-[#256569] px-4 py-2 font-medium text-white transition-colors hover:bg-[#469092] disabled:opacity-50"
             >
               {isLoading ? "Отправка..." : "Отправить письмо"}
             </button>
@@ -85,7 +85,7 @@ export default function ForgotPasswordPage() {
               Вспомнили пароль?{" "}
               <Link
                 href="/login"
-                className="font-medium text-[#2963af] underline hover:text-[#173f70]"
+                className="font-medium text-[#173f70] underline hover:text-[#2936af]"
               >
                 Войти
               </Link>

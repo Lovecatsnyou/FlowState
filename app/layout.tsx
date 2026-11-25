@@ -13,7 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body style={{ margin: 0, padding: 0 }}>
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          fontFamily: "'Book Antiqua', 'Palatino Linotype', Palatino, Georgia, serif",
+          fontWeight: 400,
+        }}
+      >
         {children}
       </body>
     </html>

@@ -38,7 +38,7 @@ export default function WorkloadPanel({ tasks, initialToday, hasError, availabil
 
   return (
     <section aria-labelledby="workload-heading" className="mb-8">
-      <h2 id="workload-heading" className="text-xl font-semibold text-[#2963af]">Учебная нагрузка</h2>
+      <h2 id="workload-heading" className="text-xl font-semibold text-[#256569]">Учебная нагрузка</h2>
       <p className="mb-4 mt-2 text-sm text-[#6c757d]">
         Активные задачи на ближайшие 7 дней. Нажмите на день, чтобы открыть его задачи.
       </p>
@@ -60,7 +60,7 @@ export default function WorkloadPanel({ tasks, initialToday, hasError, availabil
                   href={`/tasks?date=${day.date}`}
                   className={`block h-full rounded-xl border bg-white p-3 shadow-sm transition-colors hover:bg-[#f8f9fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] ${day.level === 'high' ? 'border-red-200' : 'border-[#e9ecef]'}`}
                 >
-                  <h3 className="text-sm font-semibold text-[#2963af]">
+                  <h3 className="text-sm font-semibold text-[#256569]">
                     {index === 0 ? 'Сегодня' : index === 1 ? 'Завтра' : formatCalendarDate(day.date, { weekday: 'short' })}
                   </h3>
                   <time dateTime={day.date} className="mt-1 block text-xs text-[#6c757d]">

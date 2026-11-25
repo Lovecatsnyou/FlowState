@@ -74,7 +74,7 @@ const initialFormValues: TaskFormValues = {
 };
 
 const fieldStyles =
-  'mt-2 block w-full rounded-lg border border-[#dfe3e6] bg-white px-3 py-2.5 text-sm text-[#212529] shadow-sm outline-none transition placeholder:text-[#adb5bd] focus:border-[#4fc3f7] focus:ring-2 focus:ring-[#4fc3f7]/20';
+  'mt-2 block w-full rounded-lg border border-[#dfe3e6] bg-white px-3 py-2.5 text-sm text-[#212529] shadow-sm outline-none transition placeholder:text-[#adb5bd] focus:border-[#469092] focus:ring-2 focus:ring-[#469092]/20';
 
 function formatDeadline(value: string) {
   if (!value) {
@@ -405,7 +405,7 @@ function TasksWorkspace({
       <div className="mx-auto max-w-6xl">
         <header className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-[#2963af]">
+            <h1 className="text-3xl font-bold tracking-tight text-[#256569]">
               Мои задачи
             </h1>
 
@@ -421,7 +421,7 @@ function TasksWorkspace({
             aria-expanded={isFormOpen}
             aria-controls="task-form"
             onClick={toggleForm}
-            className="self-start rounded-lg bg-[#2963af] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#204f8a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] disabled:cursor-not-allowed disabled:opacity-60"
+            className="self-start rounded-lg bg-[#256569] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#469092] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#469092] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isFormOpen ? 'Скрыть форму' : '+ Добавить задачу'}
           </button>
@@ -435,7 +435,7 @@ function TasksWorkspace({
           >
             <h2
               id="task-form-heading"
-              className="text-xl font-semibold text-[#2963af]"
+              className="text-xl font-semibold text-[#256569]"
             >
               {editingTaskId
                 ? 'Редактирование задачи'
@@ -452,7 +452,7 @@ function TasksWorkspace({
               onSubmit={handleSubmit}
               className="mt-6 grid gap-5 sm:grid-cols-2"
             >
-              <label className="text-sm font-medium text-[#2963af] sm:col-span-2">
+              <label className="text-sm font-medium text-[#256569] sm:col-span-2">
                 Название задачи
 
                 <input
@@ -472,7 +472,7 @@ function TasksWorkspace({
                 />
               </label>
 
-              <label className="text-sm font-medium text-[#2963af]">
+              <label className="text-sm font-medium text-[#256569]">
                 Предмет
 
                 <input
@@ -490,7 +490,7 @@ function TasksWorkspace({
                 />
               </label>
 
-              <label className="text-sm font-medium text-[#2963af]">
+              <label className="text-sm font-medium text-[#256569]">
                 Дедлайн
 
                 <input
@@ -507,7 +507,7 @@ function TasksWorkspace({
                 />
               </label>
 
-              <label className="text-sm font-medium text-[#2963af]">
+              <label className="text-sm font-medium text-[#256569]">
                 Оценка времени в минутах
 
                 <input
@@ -536,7 +536,7 @@ function TasksWorkspace({
                 </span>
               </label>
 
-              <label className="text-sm font-medium text-[#2963af]">
+              <label className="text-sm font-medium text-[#256569]">
                 Приоритет
 
                 <select
@@ -567,7 +567,7 @@ function TasksWorkspace({
                   type="submit"
                   {...noControlStateRestore}
                   disabled={isBusy}
-                  className="rounded-lg bg-[#039be5] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#0288d1] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="rounded-lg bg-[#256569] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#469092] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting
                     ? 'Сохранение...'
@@ -600,9 +600,9 @@ function TasksWorkspace({
               type="button"
               aria-pressed={view === item.value}
               onClick={() => onViewChange(item.value)}
-              className={`rounded-lg border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7] ${
+              className={`rounded-lg border px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#469092] ${
                 view === item.value
-                  ? 'border-[#039be5] bg-[#039be5] text-white'
+                  ? 'border-[#256569] bg-[#256569] text-white'
                   : 'border-[#dfe3e6] bg-white text-[#495057] hover:bg-[#e9ecef]'
               }`}
             >
@@ -668,7 +668,7 @@ function TasksWorkspace({
             Дата дедлайна
             <input type="date" value={dateFilter} onChange={(event) => changeDateFilter(event.target.value)} className={fieldStyles} />
             {dateFilter && (
-              <button type="button" onClick={() => changeDateFilter('')} className="mt-2 rounded text-xs font-medium text-[#039be5] hover:underline focus-visible:outline-2 focus-visible:outline-[#4fc3f7]">
+              <button type="button" onClick={() => changeDateFilter('')} className="mt-2 rounded text-xs font-medium text-[#256569] hover:underline focus-visible:outline-2 focus-visible:outline-[#469092]">
                 Все даты
               </button>
             )}
@@ -696,7 +696,7 @@ function TasksWorkspace({
 
           {!loadError && view === 'list' && tasks.length === 0 && (
             <div className="rounded-xl border border-dashed border-[#ced4da] bg-white p-8 text-center">
-              <h3 className="text-lg font-semibold text-[#2963af]">
+              <h3 className="text-lg font-semibold text-[#256569]">
                 Задач пока нет
               </h3>
 
@@ -708,7 +708,7 @@ function TasksWorkspace({
 
           {!loadError && tasks.length > 0 && visibleTasks.length === 0 && (
             <div role="status" className="rounded-xl border border-dashed border-[#ced4da] bg-white p-8 text-center">
-              <h3 className="text-lg font-semibold text-[#2963af]">
+              <h3 className="text-lg font-semibold text-[#256569]">
                 Нет задач по выбранным фильтрам
               </h3>
               <p className="mt-2 text-sm text-[#6c757d]">
@@ -720,7 +720,7 @@ function TasksWorkspace({
                   onFiltersChange({ ...filters, status: 'all', priority: 'all' });
                   if (dateFilter) changeDateFilter('');
                 }}
-                className="mt-4 rounded-lg border border-[#dfe3e6] bg-white px-4 py-2 text-sm font-semibold text-[#495057] transition-colors hover:bg-[#f8f9fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7]"
+                className="mt-4 rounded-lg border border-[#dfe3e6] bg-white px-4 py-2 text-sm font-semibold text-[#495057] transition-colors hover:bg-[#f8f9fa] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#469092]"
               >
                 Сбросить фильтры
               </button>
@@ -747,7 +747,7 @@ function TasksWorkspace({
                   : group.id === 'active-tasks'
               )).map((group) => (
                 <section key={group.id} aria-labelledby={`${group.id}-heading`}>
-                  <h3 id={`${group.id}-heading`} className="mb-5 text-xl font-semibold text-[#2963af]">
+                  <h3 id={`${group.id}-heading`} className="mb-5 text-xl font-semibold text-[#256569]">
                     {group.title} ({group.items.length})
                   </h3>
                   {group.items.length === 0 && (
@@ -764,11 +764,11 @@ function TasksWorkspace({
                       >
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <p className="text-sm font-medium text-[#039be5]">
+                            <p className="text-sm font-medium text-[#256569]">
                               {task.subject}
                             </p>
 
-                            <h4 className="mt-1 break-words text-lg font-semibold text-[#2963af]">
+                            <h4 className="mt-1 break-words text-lg font-semibold text-[#256569]">
                               {task.title}
                             </h4>
                           </div>

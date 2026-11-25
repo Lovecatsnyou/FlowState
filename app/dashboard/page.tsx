@@ -127,14 +127,14 @@ export default async function DashboardPage() {
     : user.email?.split('@')[0];
 
   return (
-    <div className="min-h-screen bg-[#E3F1FB] text-[#212529] lg:flex">
+    <div className="min-h-screen bg-[#C0D6D8] text-[#212529] lg:flex">
       <Sidebar activePath="/dashboard" email={user.email} />
 
       <main className="min-w-0 flex-1 px-5 py-8 sm:px-8 lg:p-10">
         <div className="mx-auto max-w-6xl">
           <header className="mb-8">
-            <p className="mb-2 text-sm font-medium text-[#039be5]">Dashboard</p>
-            <h1 className="break-words text-3xl font-bold tracking-tight text-[#2963af]">
+            <p className="mb-2 text-sm font-medium text-[#256569]">Dashboard</p>
+            <h1 className="break-words text-3xl font-bold tracking-tight text-[#256569]">
               {name ? `Здравствуйте, ${name}!` : 'Добро пожаловать в FlowState!'}
             </h1>
             <p className="mt-3 text-sm text-[#6c757d] sm:text-base">
@@ -151,7 +151,7 @@ export default async function DashboardPage() {
             </Link>
             <Link
               href="/tasks?create=1#task-form"
-              className="rounded-lg bg-[#2963af] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#204f8a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7]"
+              className="rounded-lg bg-[#256569] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#469092] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4fc3f7]"
             >
               Создать задачу
             </Link>
@@ -165,7 +165,7 @@ export default async function DashboardPage() {
                   Не удалось загрузить количество задач.
                 </p>
               ) : (
-                <p className="mt-3 text-4xl font-bold text-[#2963af]">
+                <p className="mt-3 text-4xl font-bold text-[#256569]">
                   {countResult.count ?? 0}
                 </p>
               )}
@@ -177,7 +177,7 @@ export default async function DashboardPage() {
               {hasStatisticsError ? (
                 <p role="alert" className="mt-3 text-sm text-red-700">Не удалось загрузить статистику.</p>
               ) : (
-                <p className="mt-3 text-4xl font-bold text-[#039be5]">{activeCount}</p>
+                <p className="mt-3 text-4xl font-bold text-[#469092]">{activeCount}</p>
               )}
               <p className="mt-2 text-sm text-[#6c757d]">Новые задачи и задачи в процессе.</p>
             </article>
@@ -198,7 +198,7 @@ export default async function DashboardPage() {
                 <p className="mt-3 text-sm text-[#6c757d]">Данные недоступны.</p>
               ) : nearestTask ? (
                 <>
-                  <p className="mt-3 text-2xl font-bold text-[#2963af]">
+                  <p className="mt-3 text-2xl font-bold text-[#256569]">
                     <time dateTime={nearestTask.deadline}>
                       {formatDeadline(nearestTask.deadline)}
                     </time>
@@ -208,7 +208,7 @@ export default async function DashboardPage() {
                   </p>
                 </>
               ) : (
-                <p className="mt-3 text-lg font-semibold text-[#2963af]">
+                <p className="mt-3 text-lg font-semibold text-[#256569]">
                   Ближайших дедлайнов нет
                 </p>
               )}
@@ -220,7 +220,7 @@ export default async function DashboardPage() {
           <PlanPanel tasks={planResult.data} availability={preferencesResult.preferences} initialToday={today} hasError={!!planResult.error} />
 
           <section aria-labelledby="upcoming-tasks-heading">
-            <h2 id="upcoming-tasks-heading" className="text-xl font-semibold text-[#2963af]">
+            <h2 id="upcoming-tasks-heading" className="text-xl font-semibold text-[#256569]">
               Ближайшие задачи
             </h2>
             <p className="mb-5 mt-2 text-sm text-[#6c757d]">
@@ -233,7 +233,7 @@ export default async function DashboardPage() {
               </p>
             ) : upcomingTasks.length === 0 ? (
               <div className="rounded-xl border border-dashed border-[#ced4da] bg-white p-8 text-center">
-                <h3 className="text-lg font-semibold text-[#2963af]">
+                <h3 className="text-lg font-semibold text-[#256569]">
                   {!countResult.error && countResult.count === 0
                     ? 'Задач пока нет'
                     : 'Нет задач с ближайшими дедлайнами'}
@@ -246,10 +246,10 @@ export default async function DashboardPage() {
               <ul className="grid gap-5 md:grid-cols-2">
                 {upcomingTasks.map((task) => (
                   <li key={task.id} className={cardStyles}>
-                    <p className="text-sm font-medium text-[#039be5]">
+                    <p className="text-sm font-medium text-[#469092]">
                       {task.subject || 'Без предмета'}
                     </p>
-                    <h3 className="mt-1 break-words text-lg font-semibold text-[#2963af]">
+                    <h3 className="mt-1 break-words text-lg font-semibold text-[#256569]">
                       {task.title || 'Без названия'}
                     </h3>
                     <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-[#e9ecef] pt-4">
